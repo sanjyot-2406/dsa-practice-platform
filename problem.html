@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ problem.title }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>{{ problem.title }}</h1>
+    <p>{{ problem.description }}</p>
+    <form method="post">
+        <textarea name="code" rows="10" cols="60" placeholder="Write your Python code here...">{{ code_prefill }}</textarea><br>
+        <button type="submit">Submit</button>
+    </form>
+    {% if feedback %}
+        <h3>Feedback:</h3>
+        <ul>
+        {% for case in feedback %}
+            <li>
+                <b>Input:</b> <code>{{ case.input }}</code> |
+                <b>Expected:</b> <code>{{ case.expected }}</code> |
+                <b>Your Output:</b> <code>{{ case.output }}</code> |
+                {% if case.passed %}
+                    <span style="color:green;">Passed</span>
+                {% else %}
+                    <span style="color:red;">Failed</span>
+                {% endif %}
+            </li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+    <p><a href="{{ url_for('index') }}">Back to Problems</a></p>
+</body>
+</html>

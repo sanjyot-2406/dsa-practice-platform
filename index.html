@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DSA Practice Platform</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>DSA Practice Platform</h1>
+    <h2>Problems</h2>
+    <ul>
+    {% for problem in problems %}
+        <li>
+            <a href="{{ url_for('problem', slug=problem['slug']) }}">{{ problem['title'] }}</a>
+        </li>
+    {% endfor %}
+    </ul>
+</body>
+</html>

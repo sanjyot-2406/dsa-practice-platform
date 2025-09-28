@@ -1,0 +1,22 @@
+[
+    {
+        "slug": "sum-of-two-numbers",
+        "title": "Sum of Two Numbers",
+        "description": "Write a program that reads two integers from input and prints their sum.",
+        "test_cases": [
+            {"input": "2 3", "output": "5"},
+            {"input": "10 20", "output": "30"}
+        ],
+        "solution": "a, b = map(int, input().split())\nprint(a + b)"
+    },
+    {
+        "slug": "reverse-string",
+        "title": "Reverse a String",
+        "description": "Write a program that reads a string and prints it reversed.",
+        "test_cases": [
+            {"input": "hello", "output": "olleh"},
+            {"input": "python", "output": "nohtyp"}
+        ],
+        "solution": "s = input()\nprint(s[::-1])"
+    }
+]
